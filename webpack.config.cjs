@@ -11,17 +11,18 @@ module.exports = {
   entry: {
     app: "./src/index.js",
   },
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "main.js",
-  },
+output: {
+  path: path.resolve(__dirname, "dist"),
+  filename: "main.js",
+  publicPath: "/",
+},
 
   devServer: {
     static: {
       directory: path.join(__dirname, "public"),
     },
     hot: false,
-    port: 9006,
+    port: 9014,
     open: true,
     devMiddleware: {
       writeToDisk: true,
@@ -71,15 +72,13 @@ module.exports = {
           },
        
       },
-      {
-        test: /\.(svg|eot|woof|woff|woff2|ttf)$/i,
-        type: "asset/resource",
-        
-          generator: {
-            filename: "./fonts/[name][ext]",
-          },
-       
-      },
+    {
+  test: /\.(svg|eot|woff|woff2|ttf)$/i,
+  type: "asset/resource",
+  generator: {
+    filename: "./fonts/[name][ext]",
+  },
+},
     ],
   },
   plugins: [
