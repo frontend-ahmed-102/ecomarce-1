@@ -22,7 +22,7 @@ output: {
       directory: path.join(__dirname, "public"),
     },
     hot: false,
-    port: 9014,
+    port: 9015,
     open: true,
     devMiddleware: {
       writeToDisk: true,
